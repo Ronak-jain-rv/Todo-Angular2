@@ -118,7 +118,7 @@ export class BodyComponent implements OnInit {
         this.select();
       }
     }
-    window.localStorage.setItem('items', JSON.stringify(this.itemArray));lllkk
+    window.localStorage.setItem('items', JSON.stringify(this.itemArray));
   }
 
   selectAll() {
