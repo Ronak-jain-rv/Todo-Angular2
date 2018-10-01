@@ -1,6 +1,8 @@
-# TODO
+Hello All!!!!
+Welcome 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.1.
+# TODO
+This is a Todo Application and this project was generated with [Angular CLI] version 6.2.1.
 
 ## Development server
 
