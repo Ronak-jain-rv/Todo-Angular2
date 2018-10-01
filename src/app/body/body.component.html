@@ -1,0 +1,80 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-2"></div>
+
+    <div class="col-md-8">
+      <div class="toDoApp">
+        <div class="header">
+          <input type="text" class="newTodo" placeholder="What needs to be done?" autofocus #box
+                 (keyup.enter)="addItem()" (blur)="addItem()" [(ngModel)] = "inputText">
+        </div>
+
+
+        <div class="main" *ngIf="all==true">
+          <input class="toggleAll" type="checkbox" [(ngModel)]="selectedAll" (change)="selectAll();">
+          <ul class="toDoList">
+            <li *ngFor="let input of itemArray; let i=index">
+              <div>
+                <input  type="checkbox" [(ngModel)]="input.completed" (change)="select();">
+                <label>
+                  <a [ngClass]="{'checked': input.completed}">{{input.data_item}}</a>
+                </label>
+                <button (click)="removeInput(i)">X</button>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+
+        <div class="main" *ngIf="active == true">
+          <input class="toggleAll" type="checkbox" [(ngModel)]="selectedAll" (change)="selectAll();">
+          <ul class="toDoList">
+            <li *ngFor="let input of activeItem; let i=index">
+              <div>
+                <input type="checkbox" [(ngModel)]="input.completed" (change)="selectActive(i);">
+                <label>
+                  <a [ngClass]="{'checked': input.completed}">{{input.data_item}}</a>
+                </label>
+                <button (click)="removeInput(i)">X</button>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+
+        <div class="main" *ngIf="completed == true">
+          <input class="toggleAll" type="checkbox" [(ngModel)]="selectedAll" (change)="selectAll();">
+          <ul class="toDoList">
+            <li *ngFor="let input of completedItem; let i=index">
+              <div>
+                <input type="checkbox" [(ngModel)]="input.completed" (change)="selectCompleted(i);">
+                <label>
+                  <a [ngClass]="{'checked': input.completed}">{{input.data_item}}</a>
+                </label>
+                <button (click)="removeInput(i)">X</button>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer">
+          <span class="toDoCount">
+            <strong>{{counter}}</strong>
+            " items left"
+          </span>
+          <ul class="filters">
+            <li><a href="#/all" [ngClass]="{'selected': all}" (click)="getAll()">All</a></li>
+            <li><a href="#/active" [ngClass]="{'selected':active}" (click)="getActive()">Active</a></li>
+            <li><a href="#/completed" [ngClass]="{'selected': completed}" (click)="getCompleted()">Complete</a></li>
+          </ul>
+          <button class="clearCompleted" (click)="clearCompleted()">Clear Completed</button>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col-md-2"></div>
+
+  </div>
+</div>

@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #080808;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+}
+
+body, h1, h2, h3, h4, h5 {
+  font-family: "Raleway", sans-serif;
+  margin: 0px;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  font: inherit;
+  color: inherit;
+}
+
+button, input[type="checkbox"] {
+  outline: none;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+
+}
